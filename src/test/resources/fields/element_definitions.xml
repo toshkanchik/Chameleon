@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Pages xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../fields/xsd/element_rules.xsd">
+    <Page name="Стартовая страница">
+        <Collection name="Главное меню"
+                    locator='//*[@class="main-menu"]/li/a'>
+            <Link name="Наименование" locator="."/>
+        </Collection>
+        <Collection name="Подменю" locator='//div[@class="menu-wrapper"]//a[contains(text(),menu-link)]'>
+            <Link name="Наименование" locator="."/>
+        </Collection>
+    </Page>
+    <Page name="Ипотека на вторичное жильё">
+        <Button name="ОСТАВИТЬ ЗАЯВКУ" locator="//div[@class='b-intro']//a[contains(text(), 'Оставить заявку')]"/>
+        <StaticText name="Ипотека на вторичное жилье" locator="//*[contains(text(),'Ипотека на вторичное жилье')]"
+                    isLoaded="true"/>
+    </Page>
+    <Page name="Заявка на ипотеку">
+        <StaticText name="Заполнение заявки" locator="//*[text()='Заполнение заявки']" isLoaded="true"/>
+        <TextInput name="E-mail"/>
+        <TextInput name="Телефон"/>
+        <TextInput name="Фамилия"/>
+        <TextInput name="Имя"/>
+        <TextInput name="Отчество"/>
+        <TextInput name="Дата рождения"/>
+        <TextInput name="Место рождения"/>
+        <TextInput name="Серия и номер паспорта"/>
+        <TextInput name="Код подразделения"/>
+        <TextInput name="Дата выдачи"/>
+        <TextInput name="Кем выдан"/>
+        <TextInput name="Адрес регистрации" customType="com.aplana.chameleon.element.custom.DynamicTextInput"/>
+        <TextInput name="Ежемесячный доход"/>
+        <TextInput name="Город приобретаемой недвижимости" customType="com.aplana.chameleon.element.custom.DynamicTextInput"/>
+        <CheckBox name="Согласие на обработку" locator="//*[@name='agreement']"/>
+        <ComboBox name="Подтверждение дохода" locator="//*[text()= 'Могу подтвердить с помощью']/..//span/.."/>
+        <Button name="Продолжить" locator="//*[.='Продолжить']"/>
+    </Page>
+</Pages>
